@@ -1,0 +1,11 @@
+
+
+[COLOR grey][Date: 2013.08.27][/COLOR][COLOR black][Post: 2][/COLOR]
+[COLOR cornflowerblue][B]Release:[/B][/COLOR]  v0.2.7 (Initial Build)
+
+[COLOR grey][Date: 2013.08.27][/COLOR][COLOR black][Post: 1][/COLOR]
+[COLOR red][B]News:[/B][/COLOR]  v0.2.7 (Initial Build)
+
+[COLOR grey][Date: 2013.08.26][/COLOR][COLOR black][Post: 1][/COLOR]
+[COLOR cornflowerblue][B]Private Build:[/B][/COLOR]  v0.2.7 (Initial Build)
+
