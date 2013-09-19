@@ -2,7 +2,7 @@
 ###	#	
 ### # Project: 			#		SearchMP3.mobi - by The Highway 2013.
 ### # Author: 			#		The Highway
-### # Version:			#		v0.2.9
+### # Version:			#		v0.3.0
 ### # Description: 	#		http://searchmp3.mobi
 ###	#	
 ### ############################################################################################################
@@ -622,14 +622,15 @@ def listItems(section=_default_section_, url='', startPage='1', numOfPages='1', 
 				try: 		img=re.compile("<img src='(http://.+?.jpg)'").findall(item)[0]
 				except:	img=_artIcon
 				#
-				n226=''
-				debob(item)
+				n226=''; album=False
+				#debob(item)
 				try: 		temp=re.compile("<div class='name first'>\s*\n*\s*(.+?)\s*\n*\s*</div>").findall(item)[0]
 				except:	temp='Unknown '+n226+' Unknown - Unknown'
 				if (temp is not 'Unknown album'):
 					if (' '+n226+' ' in temp): labs['Artist']=temp.split(' '+n226+' ')[0]
 					else: labs['Artist']='Unknown'
 					if (' '+n226+' ' in temp) and (' - ' in temp): labs['Album']=temp.split(' '+n226+' ')[1].split(' - ')[0]
+					if (' '+n226+' ' not in temp) and (' - ' not in temp): labs['Album']=temp; album=True
 					else: labs['Album']='Unknown'
 					if (' '+n226+' ' in temp) and (' - ' in temp): labs['SongTitle']=temp.split(' '+n226+' ')[1].split(' - ')[1]
 					elif (' '+n226+' ' in temp): labs['SongTitle']=temp.split(' '+n226+' ')[1]
@@ -646,8 +647,13 @@ def listItems(section=_default_section_, url='', startPage='1', numOfPages='1', 
 					labs['title']=cFL_('Listen:  '+title1,ps('cFL_color')); labs2['title']=cFL_('Watch:  - '+title2,ps('cFL_color2'))
 					parsPS={'mode': 'PlaySong' , 'section': 'music', 'url': url, 'img': img, 'title': pTitle }
 					parsPV={'mode': 'PlayVideo', 'section': 'music', 'url': url, 'img': img, 'title': pTitle }
-					_addon.add_directory(parsPS, labs, img=img, fanart=_artFanart, contextmenu_items=contextMenuItems, total_items=ItemCount,is_folder=False)
-					_addon.add_directory(parsPV, labs2, img=img, fanart=_artFanart, contextmenu_items=contextMenuItems, total_items=ItemCount,is_folder=True)
+					parsAL={'mode': 'GetTitles', 'section': 'music', 'url': url, 'img': img, 'title': labs['Album'] }
+					if (album==True):
+						labs['title']='[Album]:  '+labs['Album']
+						_addon.add_directory(parsAL, labs, img=img, fanart=_artFanart, contextmenu_items=contextMenuItems, total_items=ItemCount,is_folder=True)
+					elif (album==False):
+						_addon.add_directory(parsPS, labs, img=img, fanart=_artFanart, contextmenu_items=contextMenuItems, total_items=ItemCount,is_folder=False)
+						_addon.add_directory(parsPV, labs2, img=img, fanart=_artFanart, contextmenu_items=contextMenuItems, total_items=ItemCount,is_folder=True)
 					#
 	elif (iitems is not None):
 		ItemCount=len(iitems)
@@ -713,6 +719,9 @@ def Menu_MainMenu(): #The Main Menu
 	_addon.add_directory({'mode': 'GetTitles', 'section': 'music', 'url': 'http://searchmp3.mobi/top-mp3-rated-this-month.xhtml'}, {'title': cFL_('Top Rated (This Month)',ps('cFL_color'))}, fanart=_artFanart)
 	_addon.add_directory({'mode': 'GetTitles', 'section': 'music', 'url': 'http://searchmp3.mobi/top-mp3-rated-all-time.xhtml'}, {'title': cFL_('Top Rated (All Time)',ps('cFL_color'))}, fanart=_artFanart)
 	_addon.add_directory({'section': 'music', 'mode': 'Search', 				'pageno': '1', 'pagecount': addst('pages')},			{'title':  cFL_('Search',ps('cFL_color'))}, 						fanart=_artFanart,img=art('icon-search'))
+	# \/  an example of how to do a search with a value given.  \/
+	#_addon.add_directory({'section': 'music', 'mode': 'Search','title':'selena gomez', 				'pageno': '1', 'pagecount': addst('pages')},			{'title':  cFL_('Search (example with a value included)',ps('cFL_color'))}, 						fanart=_artFanart,img=art('icon-search'))
+	#
 	##_addon.add_directory({'section': 'music', 'mode': 'FavoritesList'},	 										{'title':  cFL('F',ps('cFL_color'))+'avorites '+addst('fav.movies.1.name')},fanart=_artFanart,img=art('movies'))
 	##_addon.add_directory({'section': 'music', 'mode': 'FavoritesList', 	'subfav': '2'},	 		{'title':  cFL('F',ps('cFL_color'))+'avorites '+addst('fav.movies.2.name')},fanart=_artFanart,img=art('movies'))
 	###_addon.add_directory({'mode': 'LoadCategories', 'section': ps('section.movie')},		{'title':  cFL('M',ps('cFL_color'))+'ovies'}  ,img=art('movies')				,fanart=_artFanart)
@@ -867,12 +876,14 @@ def doSearchNormal (section,title=''):
 	if (title==''):
 		title=showkeyboard(txtMessage=title,txtHeader="Title:  ("+section+")")
 		if (title=='') or (title=='none') or (title==None) or (title==False): return
-	if (' ' in title) or ('-' in title):
-		_param['url']=_domain_url+'/mp3/'+title.lower().replace(' ','-').replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B') #+'?source=search&query='+title #SearchPrefix+title; 
-		deb('Searching for',_param['url']); listItems('search2', _param['url'], _param['pageno'], addst('pages'), _param['genre'], _param['year'], _param['title'])
-	else:
-		_param['url']=_domain_url+'/'+title.lower().replace(' ','-').replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B')+'?source=search&query='+title.lower().replace(' ','-').replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B')
-		deb('Searching for',_param['url']); listItems('search', _param['url'], _param['pageno'], addst('pages'), _param['genre'], _param['year'], _param['title'])
+	#if (' ' in title) or ('-' in title):
+	#	_param['url']=_domain_url+'/mp3/'+title.lower().replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B').replace(' ','-') #+'?source=search&query='+title #SearchPrefix+title; 
+	#	deb('Searching for',_param['url']); listItems('search2', _param['url'], _param['pageno'], addst('pages'), _param['genre'], _param['year'], _param['title'])
+	#else:
+	#	_param['url']=_domain_url+'/'+title.lower().replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B').replace(' ','-')+'?source=search&query='+title.lower().replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B').replace(' ','+')
+	#	deb('Searching for',_param['url']); listItems('search', _param['url'], _param['pageno'], addst('pages'), _param['genre'], _param['year'], _param['title'])
+	_param['url']=_domain_url+'/'+title.lower().replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B').replace(' ','-')+'?source=search&query='+title.lower().replace('+','%2B').replace('=','%3D').replace('/','%2F').replace(',','%2C').replace(':','%3A').replace(';','%3B').replace(' ','+')
+	deb('Searching for',_param['url']); listItems('search', _param['url'], _param['pageno'], addst('pages'), _param['genre'], _param['year'], _param['title'])
 	#
 
 def doSearchAdvanced (section,title=''):
