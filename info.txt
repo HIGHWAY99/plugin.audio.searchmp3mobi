@@ -1,0 +1,173 @@
+
+=======================================================================================
+=======================================================================================
+=======================================================================================
+* http://searchmp3.mobi/
+** Play Song
+<param name="FlashVars" value="mp3=http%3A%2F%2Fs12.searchmp3.mobi%2Fd%2F--ko0m9oyy_H7Rpl858O4Q%2F1377571712%2Fmp3%2Fs%2Fselena-gomez%2FSelena+Gomez+-+When+You+Ready+Come+And+Get+It.mp3%3Ff%3DSelena%252520Gomez%252520-%252520When%252520You%252520Ready%252520Come%252520and%252520Get%252520It.mp3&amp;width=460&amp;height=41&amp;loop=1&amp;volume=100&amp;showvolume=1&amp;showstop=0&amp;bgcolor1=4E535A&amp;bgcolor2=4E535A&amp;slidercolor1=F6D80B&amp;slidercolor2=F6D80B&amp;buttoncolor=F6D80B" />
+** Play Youtube Music Video
+<iframe width="99%" height="260" src="http://www.youtube.com/embed/n-D1EB74Ckg" frameborder="0" allowfullscreen></iframe>
+** Search
+http://searchmp3.mobi/hot?source=search&query=hot
+<li class='fade_rtl'>
+        <a href='http://searchmp3.mobi/calfornication-mp3-red-hot-chili-peppers'>
+            <img src='http://s13.searchmp3.mobi/mp3/r/small_red-hot-chili-peppers.jpg' alt=''>
+            <div class='names v-center'>
+                <div class='name first'>Red Hot Chili Peppers — Calfornication</div>
+            </div>
+        </a>
+    </li>
+    <li class='fade_rtl'>
+        <a href='http://searchmp3.mobi/by-the-way-mp3-red-hot-chili-peppers-1'>
+            <img src='http://s13.searchmp3.mobi/mp3/r/small_red-hot-chili-peppers.jpg' alt=''>
+            <div class='names v-center'>
+                <div class='name first'>Red Hot Chili Peppers — By The Way.</div>
+            </div>
+        </a>
+    </li>
+
+** Default Thumbnail
+http://searchmp3.mobi/assets/common/nocover-40x40.jpg
+
+** Front Page
+
+*** Most Wanted MP3
+<h1 class='m-bottom_20'>Most Wanted Mp3:</h1>
+                <ul class='block-items m-bottom_20'>
+((SPLIT))</ul>
+
+<li class="fade_rtl">
+                            <a href="http://searchmp3.mobi/mp3/LIL-WAYNE?source=index" title="Search Lil Wayne mp3">
+                                <div class="name-artist">Lil Wayne</div>
+                            </a>
+                        </li>
+
+*** Top Artists
+<h1 class='m-bottom_20'>Top artists:</h1>
+                <ul class='block-items m-bottom_20'>
+((SPLIT))</ul>
+
+<li class='fade_rtl'>
+                            <a href='http://searchmp3.mobi/rihanna?source=index'>
+                                                                    <img src="http://s12.searchmp3.mobi/mp3/r/small_rihanna.jpg" />
+                                                                <div class='names v-center'>
+                                    <div class='name first'>Rihanna</div>
+                                </div>
+                            </a>
+                        </li>
+
+*** Top Rated Music
+<h1 class='m-bottom_20'>Top Rated Music:</h1>
+                <ul class='block-items m-bottom_20'>
+((SPLIT))</ul>
+
+<li itemscope itemtype="http://schema.org/MusicRecording" class='fade_rtl'>
+    <meta itemprop="byArtist" content="Justin Bieber"/>
+    <meta itemprop="name" content="As Long As You Love Me (feat. Big Sean)"/>
+    <meta itemprop="url" content="http://searchmp3.mobi/as-long-as-you-love-me-feat-big-sean-mp3-justin-bieber?source=index"/>
+    <meta itemprop="inAlbum" content="Believe (Deluxe Edition)"/>
+    <meta itemprop="duration" content="PT3M50S"/>
+    <a href='http://searchmp3.mobi/as-long-as-you-love-me-feat-big-sean-mp3-justin-bieber?source=index'>
+                    <img src="http://s12.searchmp3.mobi/mp3/j/justin-bieber/small_believe-deluxe-edition.jpg" alt="Believe (Deluxe Edition)" />
+                <div class='names v-center'>
+            <div class='name first'>Justin Bieber</div>
+            <div class='name second'>As Long As You Love Me (feat. Big Sean)</div>
+        </div>
+    </a>
+</li>
+
+*** Top Song Downloads
+<h1 class='m-bottom_20'>Top Songs Downloads:</h1>
+                <ul class='block-items m-bottom_20'>
+((SPLIT))</ul>
+
+<li itemscope itemtype="http://schema.org/MusicRecording" class='fade_rtl'>
+    <meta itemprop="byArtist" content="Demi Lovato"/>
+    <meta itemprop="name" content="Heartattack"/>
+    <meta itemprop="url" content="http://searchmp3.mobi/heartattack-mp3-demi-lovato?source=index"/>
+    <meta itemprop="inAlbum" content="Unknown album"/>
+    <meta itemprop="duration" content="PT3M28S"/>
+    <a href='http://searchmp3.mobi/heartattack-mp3-demi-lovato?source=index'>
+                    <img src="http://s14.searchmp3.mobi/mp3/d/small_demi-lovato.jpg" alt="Demi Lovato" />
+                <div class='names v-center'>
+            <div class='name first'>Demi Lovato</div>
+            <div class='name second'>Heartattack</div>
+        </div>
+    </a>
+</li>
+
+*** Latest Tracks
+<h1 class='m-bottom_20'>Latest tracks:</h1>
+            <div class='cols m-bottom_40'>
+                <ul class='block-items m-bottom_20'>
+((SPLIT))</section>
+
+<li itemscope itemtype="http://schema.org/MusicRecording" class='fade_rtl'>
+    <meta itemprop="byArtist" content="1000 Best Tracks Of Life Mixed & Compillation By G"/>
+    <meta itemprop="name" content="224.sunics - Born To Dance"/>
+    <meta itemprop="url" content="http://searchmp3.mobi/224sunics-born-to-dance-mp3-1000-best-tracks-of-life-mixed-compillation-by-greidor-rocktransovich-21?source=index"/>
+    <meta itemprop="inAlbum" content="Unknown album"/>
+    <meta itemprop="duration" content="PT3M33S"/>
+    <a href='http://searchmp3.mobi/224sunics-born-to-dance-mp3-1000-best-tracks-of-life-mixed-compillation-by-greidor-rocktransovich-21?source=index'>
+                    <img src="http://searchmp3.mobi/assets/common/nocover-40x40.jpg" alt="Unknown album" />
+                <div class='names v-center'>
+            <div class='name first'>1000 Best Tracks Of Life Mixed & Compillation By G</div>
+            <div class='name second'>224.sunics - Born To Dance</div>
+        </div>
+    </a>
+</li>
+
+
+*** More... Links
+
+http://searchmp3.mobi/top-mp3-downloads-today.xhtml
+http://searchmp3.mobi/top-mp3-downloads-this-week.xhtml
+http://searchmp3.mobi/top-mp3-downloads-this-month.xhtml
+http://searchmp3.mobi/top-mp3-downloads-all-time.xhtml
+
+
+http://searchmp3.mobi/top-mp3-rated-today.xhtml
+http://searchmp3.mobi/top-mp3-rated-this-week.xhtml
+http://searchmp3.mobi/top-mp3-rated-this-month.xhtml
+http://searchmp3.mobi/top-mp3-rated-all-time.xhtml
+
+
+http://searchmp3.mobi/most-wanted-today.xhtml
+
+
+http://searchmp3.mobi/top-mp3-artists-today.xhtml
+
+
+*** Pages
+<div class="content-box">
+				<span class="more current-page">1</span>
+				<a href="?page=2"  title="Page 2" class="more">2</a>
+				<a href="?page=3"  title="Page 3" class="more">3</a>
+<span class="more nav-page">...</span>
+				<a href="?page=48"  title="Page 48" class="more">48</a>
+				<a href="?page=49"  title="Page 49" class="more">49</a>
+				<a href="?page=50"  title="Page 50" class="more">50</a>
+										<a href="?page=2" class="more nav-page">&gt;</a>
+										<a href="?page=50" class="more nav-page">&gt;&gt;</a>
+							</div>
+        <p>
+
+
+
+
+
+*** Images
+http://searchmp3.mobi/assets/web2/images/search.png
+
+
+http://images4.fanpop.com/image/photos/17200000/Flaming-Guitar-Wallpaper-music-17264134-1680-1050.jpg
+
+
+
+
+
+
+=======================================================================================
+=======================================================================================
+=======================================================================================
+

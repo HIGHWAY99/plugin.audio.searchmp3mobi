@@ -862,6 +862,7 @@ def clean_filename(filename):
     return re.sub('[/:"*?<>|]+', ' ', filename)
 
 def ParseDescription(plot): ## Cleans up the dumb number stuff thats ugly.
+	#if (chr(226)in plot): plot=plot.replace(chr(226),'--')
 	if ('&#' in plot) and (';' in plot):
 		if ("&amp;"  in plot):  plot=plot.replace('&amp;'  ,'&')#&amp;#x27;
 		if ("&#8211;" in plot): plot=plot.replace("&#8211;",";") #unknown
